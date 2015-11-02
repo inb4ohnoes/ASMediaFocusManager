@@ -60,7 +60,7 @@ static CGFloat const kSwipeOffset = 100;
 
 - (ASMediaFocusManager *)focusViewController
 {
-    return self.mediaPageViewController.viewControllers.firstObject;
+    return (ASMediaFocusManager *)self.mediaPageViewController.viewControllers.firstObject;
 }
 
 - (void)installOnViews:(NSArray *)views
@@ -619,7 +619,7 @@ static CGFloat const kSwipeOffset = 100;
     [self.focusViewController playVideo]; // plays the current focus controller after transitioning (may be the one we were transitioning from if completed is false).
 }
 
-- (NSUInteger)pageViewControllerSupportedInterfaceOrientations:(UIPageViewController *)pageViewController
+- (UIInterfaceOrientationMask)pageViewControllerSupportedInterfaceOrientations:(UIPageViewController *)pageViewController
 {
     return UIInterfaceOrientationMaskAll;
 }
